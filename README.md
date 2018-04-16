@@ -53,10 +53,9 @@ To help you, this project has a `npm run fix` command to fix all eslint errors.
 ### Tasks
 
 - `npm start`: run all tasks and initialize watch for changes and a server
-- `npm build`: run all production tasks create a `dist` folder to deploy
-- `npm lint`: lint javascript and css
+- `npm run build`: run all production tasks create a `dist` folder to deploy
+- `npm run lint`: lint javascript and css
 - `npm run fix`: command to fix all eslint errors
-- `npm run build`: run all tasks to build
 
 ## License
 
