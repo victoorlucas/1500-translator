@@ -5,20 +5,18 @@ import { debounce } from './debounce.js';
 
 export const translator = (e) => {
   const $translator = document.querySelector('[data-translator="input"]');
-  const $result = document.querySelector('[data-translator="result"]');
-  const $button = document.querySelector('[data-translator="button"]');
+  const $result = document.querySelector('[data-translator="result"]'); 
   const library = json;
   let text; 
 
-  $button.addEventListener('click', (e) => {
-    e.preventDefault(); 
+  const textTranslate = (e) => { 
     text = $translator.value.toLowerCase();  
     forEach(library, (value, key) => { 
       const regex = new RegExp(removeAccent(key), 'gm'); 
       text = text.replace(regex, value); 
     }); 
     $result.value = text || 'Tradução';  
-  });
+  };
 
-  $translator.addEventListener('keyup', (e) => debounce($button.click(), 600));
+  $translator.addEventListener('keyup', (e) => debounce(textTranslate(), 600));
 }; 
