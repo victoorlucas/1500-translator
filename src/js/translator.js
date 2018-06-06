@@ -21,6 +21,11 @@ export const translator = (e) => {
   const textTranslate = (e) => { 
     let text;
     text = $translator.value.toLowerCase();  
+    if(text == ''){
+      $translator.placeholder = 'Digitar texto...';
+      $result.value = 'Tradução'; 
+      return ; 
+    }
     text = translate(json, text);
     $result.value = text || 'Tradução';  
   };
