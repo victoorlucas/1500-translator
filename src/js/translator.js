@@ -3,7 +3,7 @@ import json from '../library.json';
 import { removeAccent } from './convert.js'; 
 import { debounce } from './debounce.js'; 
 
-const generateRandomKey  = (data = []) => Math.floor(Math.random() * (data.length - 0) + 0);
+const generateRandomKey = (data = []) => Math.floor(Math.random() * (data.length - 0) + 0);
 
 const translate = (library, input) => {
   let text = input;
@@ -21,16 +21,16 @@ export const translator = (e) => {
   const textTranslate = (e) => { 
     let text;
     text = $translator.value.toLowerCase();  
-    if(text == ''){
+    if(text ==== ''){
       $translator.placeholder = 'Digitar texto...';
       $result.value = 'Tradução'; 
-      return ; 
+      return; 
     }
     text = translate(json, text);
     $result.value = text || 'Tradução';  
   };
   
-  const getRandomText  = () => {
+  const getRandomText = () => {
     const keys = Object.keys(json);
     const phrase = keys[generateRandomKey(keys)];
     $translator.placeholder = phrase;
@@ -39,6 +39,4 @@ export const translator = (e) => {
 
   $translator.addEventListener('keyup', (e) => debounce(textTranslate(), 600));
   window.addEventListener('load', () => getRandomText());
-
-}; 
-
+};
